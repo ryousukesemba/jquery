@@ -6,6 +6,88 @@
 
 </head>
 <body>
+	<table>
+			<colgroup>
+				<col span = "1" style="background-color: #ffebeb; padding: 1em;"></col>
+				<col span = "5" style="background-color: #fafafa; padding: 1em;"></col>
+				<col span = "1" style="background-color: #f3fdff; padding: 1em;"></col>
+			</colgroup>
+		<caption>2017/01</caption>
+		<tr class = "week">
+			<td style = "padding: 1em;">日</td>
+			<td style = "padding: 1em;">月</td>
+			<td style = "padding: 1em;">火</td>
+			<td style = "padding: 1em;">水</td>
+			<td style = "padding: 1em;">木</td>
+			<td style = "padding: 1em;">金</td>
+			<td style = "padding: 1em;">土</td>
+		</tr>
+
+		<tr class = "days">
+			<td style = "padding: 1em;">1</td>
+			<td style = "padding: 1em;">2</td>
+			<td style = "padding: 1em;">3</td>
+			<td style = "padding: 1em;">4</td>
+			<td style = "padding: 1em;">5</td>
+			<td style = "padding: 1em;">6</td>
+			<td style = "padding: 1em;">7</td>
+		</tr>
+
+		<tr class = "days">
+			<td style = "padding: 1em;">8</td>
+			<td style = "padding: 1em;">9</td>
+			<td style = "padding: 1em;">10</td>
+			<td style = "padding: 1em;">11</td>
+			<td style = "padding: 1em;">12</td>
+			<td style = "padding: 1em;">13</td>
+			<td style = "padding: 1em;">14</td>
+		</tr>
+
+		<tr class = "days">
+			<td style = "padding: 1em;">15</td>
+			<td style = "padding: 1em;">16</td>
+			<td style = "padding: 1em;">17</td>
+			<td style = "padding: 1em;">18</td>
+			<td style = "padding: 1em;">19</td>
+			<td style = "padding: 1em;">20</td>
+			<td style = "padding: 1em;">21</td>
+		</tr>
+
+		<tr class = "days">
+			<td style = "padding: 1em;">22</td>
+			<td style = "padding: 1em;">23</td>
+			<td style = "padding: 1em;">24</td>
+			<td style = "padding: 1em;">25</td>
+			<td style = "padding: 1em;">26</td>
+			<td style = "padding: 1em;">27</td>
+			<td style = "padding: 1em;">28</td>
+		</tr>
+
+		<tr class = "days">
+			<td style = "padding: 1em;">29</td>
+			<td style = "padding: 1em;">30</td>
+			<td style = "padding: 1em;">31</td>
+			<td class = "blankday" ></td>
+			<td class = "blankday" ></td>
+			<td class = "blankday" ></td>
+			<td class = "blankday" ></td>
+
+		</tr>
+	</table>
+
+
+
+
+
+
+	<script>
+		$(function(){
+		
+			
+			$("td:contains(17)").siblings().css("color", "orange");
+
+		});
+	</script>
 
 </body>
 </html>
