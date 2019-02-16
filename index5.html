@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<style>
+		ul.accordion{
+			background-color: #eee;
+			width: 80%;
+			margin:0 auto 30px;
+			padding: 10px;
+			font-size: 18px;
+			list-style: none;
+		}
+		ul.accordion a{
+			display: block;
+			padding: 10px;
+			background-position: 97% center;
+			background-repeat: no-repeat;
+			text-decoration: none;
+			color: #fff;
+
+
+		}
+
+		ul.accordion span{
+			display: block;
+			padding: 10px;
+			background-position: 97%;
+			background-repeat: no-repeat;
+			color: #333;
+		}
+
+		ul.accordion ul{
+			display: none;
+
+		}
+		ul.accordion li > p{
+			background-color:linear-gradient(top,#666,#333);
+			list-style: none;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>アコーディオン</h1>
+	<hr>
+
+	<ul class="accordion">
+		<li>
+			<p><span>リスト1</span></p>
+			<ul>
+				<li><a href="#">リスト1−1</a></li>
+				<li><a href="#">リスト1−2</a></li>
+				<li><a href="#">リスト1−3</a></li>
+			</ul>		
+		</li>		
+	</ul>		
+
+	<script>
+		$(function(){
+			$(".accordion p").on("click",function(){
+				$(this).next().slideToggle();
+			});
+		});
+	</script>
+
+</body>
+</html>
