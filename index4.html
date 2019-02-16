@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<style>
+		body{
+			width: 100%;
+			height: 8000px;
+		}
+		#pageTop{
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			font-size: 16px;
+		}
+		#pageTop a{
+			background-color: #666;
+			text-decoration: none;
+			color: #fff;
+			width: 100px;
+			padding: 30px 0;
+			text-align: center;
+			display:block;
+			border-radius: 5px;
+		}
+
+		#pageTop a:hover{
+			text-decoration: none;
+			background-color: #999;
+		}
+
+		#redArea{
+			background-color: red;
+
+		}
+		#blueArea{
+			background-color: blue;
+		}
+		#greenArea{
+			background-color: green;
+		}
+		#yellowArea{
+			background-color: yellow;
+		}
+		.area{
+			width: 100%;
+			height: 2000px;
+			color: #fff;
+			font-size: 20px;
+			line-height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id = "redArea" class = "area">赤</div>
+	<div id = "blueArea" class = "area"></div>
+	<div id = "greenArea" class = "area"></div>
+	<div id = "yellowArea" class = "area"></div>
+	<p id = "pageTop">
+		<a href="#">ページトップへ</a>
+	</p>
+	
+
+
+	<script>
+		$(function(){
+		
+			$("#pageTop").hide();
+			$(window).scroll(function(){
+				if($(this).scrollTop() > 3000){
+					$("#pageTop").fadeIn();
+				} else {
+					$("#pageTop").fadeOut();
+				}
+			});
+			
+			$("#pageTop").on("click",function(){
+				$("body,html").animate({
+					scrollTop:0
+				},1000);
+				return false;
+			});
+		});
+	</script>
+
+</body>
+</html>
