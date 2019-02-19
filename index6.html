@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+	<meta charset="utf-8">
+	<title>jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="slick.css">
+	<script type="text/javascript" src = "slick.min.js"></script>
+	<style>	
+		.content{
+			width: 500px;
+			padding: 80px auto 0;
+			margin: 0 auto;
+		}
+
+		h2{
+			margin-top: 120px;
+			text-align: center;
+		}
+
+		.slider{
+			width: 400px;
+			height: auto;
+			margin: 0 auto 80px;
+		}
+		.slider img{
+			width: 400px;
+			height: auto;
+		}
+		.slick-dots li button{
+			background-color: #333;
+			border-radius: 50%;
+			width: 10px;
+			height: 10px;
+		}
+		.slick-prev,.slick-next{
+			background-color: #111;
+			height: 100%;
+		}
+		.slick-prev:hover,.slick-next:hover{
+			opacity: 0.9;
+
+		}
+		.slider .slick-dots{
+			position: absolute;
+			bottom: -70px;
+		}
+		#tglBtn{
+			background-color: #333;
+			border:none;
+			border-radius: 3px;
+			color: #fafafa;
+			padding: 20px;
+			position: absolute;
+			left: 0;
+			top: -10px;
+		}
+		#tglBtn:hover{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class = "content">
+		<h2>slide show</h2>
+		<div class = "slider">
+			<div><img src="images/image1.png"></div>
+			<div><img src="images/image2.png"></div>
+			<div><img src="images/image3.jpg"></div>
+			<div><img src="images/image4.jpg"></div>
+			<div><img src="images/image5.jpeg"></div>
+			<div><img src="images/image6.jpeg"></div>
+		</div>
+
+	</div>
+		
+
+	<script>
+		$(function(){
+				$(".slider").slick({
+					dots: true,
+					arrows: true,
+					autoplay: true,
+					autoplaySpeed: 2500,
+					pauseOnDotsHover: true,
+					lazyLoad: "pogressive"
+				});
+
+			//再生ボタンの準備
+			var stopBtn = $('<button id = "tglBtn"><span id = "startBtn">再生</span><span id = "stopBtn">停止</span></button>');
+			
+			stopBtn.prependTo(".slider slick-dots ");
+
+			$("#startBtn").hide();
+
+			var flg = "play";
+
+			$("#tglBtn").click(function(){
+				$("#startBtn").toggle();
+
+				if(flg == "play"){
+					$("#startBtn").show();
+					$("#stopBtn").hide();
+					flg = "stop";
+					$(".slider").slick("slickPause")
+				}else{
+					$("#startBtn").hide();
+					$("#stopBtn").show();
+					flg = "play";
+					$(".slider").slick("slickPlay");
+				};
+			});
+		});
+
+
+		//event
+		
+		// On swipe event
+		$('.slider').on('swipe', function(event, slick, direction){
+		  //console.log(direction);
+		  // left
+		});
+
+		// On edge hit
+		$('.slider').on('edge', function(event, slick, direction){
+		 // console.log('edge was hit')
+		});
+
+		// On before slide change
+		$('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		 // console.log("currentSlide:"+currentSlide);
+		  //console.log("nextSlide:"+nextSlide);
+		});
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
